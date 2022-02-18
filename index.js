@@ -30,8 +30,8 @@ function write() {
     var today = new Date();
     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     var time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
-    var dateTime = date + '' + time;
-    const data = 'data inserted' + dateTime + "\n";
+    var dateTime = date + '  ' + time;
+    const data = 'data inserted :- ' + dateTime + "\n";
     fs.appendFile("vikas.txt", data,() => {
         console.log("Data is inserted into file after every one minutes");
     })
