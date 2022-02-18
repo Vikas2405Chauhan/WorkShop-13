@@ -4,8 +4,7 @@ const authRoute = require('./routes/auth'); //Import Routes
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const postRoute = require('./routes/posts');
-const cron = require('cron-master');
-const nodeCron = require('node-cron');
+const cron = require('node-cron');
 const req = require('express/lib/request');
 const fs = require('fs');
 
@@ -23,7 +22,7 @@ app.use(express.json());
 app.use('/api/user', authRoute);
 app.use('/api/posts', postRoute);
 
-nodeCron.schedule('* * * * *', () => {
+cron.schedule('* * * * *', () => {
     write();
 })
 
